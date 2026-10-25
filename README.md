@@ -1,6 +1,12 @@
 # Hi, I'm Tanjim 👋
 
-**CSE student at North South University (2023–2027)** · Aspiring Software Engineer · Dhaka, Bangladesh
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./light.svg">
+  <img alt="Tanjim Al Islam — CSE student at North South University, full-stack developer focused on blockchain and AI/ML for healthcare" src="./dark.svg" width="100%">
+</picture>
+
+**CSE student at North South University** · Aspiring Software Engineer · Dhaka, Bangladesh
 
 > *"The best problems to work on are the ones people call impossible."*
 
