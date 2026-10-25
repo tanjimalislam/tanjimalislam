@@ -45,8 +45,8 @@
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes scan{0%{transform:translateY(0);opacity:0}6%{opacity:1}40%{transform:translateY(446px);opacity:1}41%,100%{opacity:0;transform:translateY(446px)}}
 @keyframes blink{50%{opacity:0}}
-@keyframes type{0%{transform:scaleX(0)}9%,21%{transform:scaleX(1)}25%,100%{transform:scaleX(0)}}
-@keyframes show{0%,100%{opacity:1}}
+@keyframes vis0{0.00%,24.99%{opacity:1}25.00%,100%{opacity:0}}@keyframes cov0{0.00%{transform:scaleX(1)}9.00%,21.00%{transform:scaleX(0)}24.99%{transform:scaleX(1)}25.00%,100%{transform:scaleX(0)}}@keyframes vis1{0%,24.99%{opacity:0}25.00%,49.99%{opacity:1}50.00%,100%{opacity:0}}@keyframes cov1{0%,24.99%{transform:scaleX(0)}25.00%{transform:scaleX(1)}34.00%,46.00%{transform:scaleX(0)}49.99%{transform:scaleX(1)}50.00%,100%{transform:scaleX(0)}}@keyframes vis2{0%,49.99%{opacity:0}50.00%,74.99%{opacity:1}75.00%,100%{opacity:0}}@keyframes cov2{0%,49.99%{transform:scaleX(0)}50.00%{transform:scaleX(1)}59.00%,71.00%{transform:scaleX(0)}74.99%{transform:scaleX(1)}75.00%,100%{transform:scaleX(0)}}@keyframes vis3{0%,74.99%{opacity:0}75.00%,99.99%{opacity:1}100.00%,100%{opacity:0}}@keyframes cov3{0%,74.99%{transform:scaleX(0)}75.00%{transform:scaleX(1)}84.00%,96.00%{transform:scaleX(0)}99.99%{transform:scaleX(1)}100.00%,100%{transform:scaleX(0)}}
+.cov{transform:scaleX(0)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <linearGradient id="winGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1526"/><stop offset="1" stop-color="#060b14"/></linearGradient>
@@ -64,10 +64,6 @@
 <mask id="pfade" maskUnits="userSpaceOnUse" x="44" y="104" width="340" height="446"><rect x="44" y="104" width="340" height="446" fill="url(#fadeGrad)"/></mask>
 <filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 
-<clipPath id="r0"><rect x="456" y="176" width="208" height="24" style="transform-origin:456px 0;animation:type 12s steps(22) 1.2s both"/></clipPath>
-<clipPath id="r1"><rect x="456" y="176" width="266" height="24" style="transform-origin:456px 0;animation:type 12s steps(28) 4.2s both"/></clipPath>
-<clipPath id="r2"><rect x="456" y="176" width="334" height="24" style="transform-origin:456px 0;animation:type 12s steps(35) 7.2s both"/></clipPath>
-<clipPath id="r3"><rect x="456" y="176" width="286" height="24" style="transform-origin:456px 0;animation:type 12s steps(30) 10.2s both"/></clipPath>
 <filter id="soft" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="6"/></filter>
 </defs>
 <rect x="8" y="8" width="944" height="624" rx="16" fill="url(#winGrad)" stroke="#22d3ee" stroke-opacity=".42" stroke-width="1.2"/>
@@ -138,10 +134,14 @@
 <g class="fade" style="animation-delay:0.30s"><text x="436" y="126" class="m over">HELLO, I&#x27;M</text></g>
 <g class="fade" style="animation-delay:0.45s"><text x="435" y="162" class="s name" fill="url(#nameGrad)">Tanjim Al Islam</text></g>
 <g class="fade" style="animation-delay:.9s"><text x="436" y="193" class="m pre">&gt;</text>
-<g clip-path="url(#r0)"><text x="456" y="193" class="m role">Full-Stack Developer<tspan class="blink" style="fill:#4ade80">▍</tspan></text></g>
-<g clip-path="url(#r1)" opacity="0" style="animation:show 1s infinite"><text x="456" y="193" class="m role">Aspiring Software Engineer<tspan class="blink" style="fill:#4ade80">▍</tspan></text></g>
-<g clip-path="url(#r2)" opacity="0" style="animation:show 1s infinite"><text x="456" y="193" class="m role">Blockchain &amp; AI/ML for Healthcare<tspan class="blink" style="fill:#4ade80">▍</tspan></text></g>
-<g clip-path="url(#r3)" opacity="0" style="animation:show 1s infinite"><text x="456" y="193" class="m role">CSE @ North South University<tspan class="blink" style="fill:#4ade80">▍</tspan></text></g>
+<text x="456" y="193" class="m role" style="animation:vis0 12s linear 1.2s infinite both">Full-Stack Developer<tspan class="blink" style="fill:#4ade80">▍</tspan></text>
+<rect class="cov" x="455" y="176" width="210" height="24" fill="#0a1322" style="transform-origin:665px 0;animation:cov0 12s steps(22) 1.2s infinite both"/>
+<text x="456" y="193" class="m role" opacity="0" style="animation:vis1 12s linear 1.2s infinite both">Aspiring Software Engineer<tspan class="blink" style="fill:#4ade80">▍</tspan></text>
+<rect class="cov" x="455" y="176" width="268" height="24" fill="#0a1322" style="transform-origin:723px 0;animation:cov1 12s steps(28) 1.2s infinite both"/>
+<text x="456" y="193" class="m role" opacity="0" style="animation:vis2 12s linear 1.2s infinite both">Blockchain &amp; AI/ML for Healthcare<tspan class="blink" style="fill:#4ade80">▍</tspan></text>
+<rect class="cov" x="455" y="176" width="336" height="24" fill="#0a1322" style="transform-origin:791px 0;animation:cov2 12s steps(35) 1.2s infinite both"/>
+<text x="456" y="193" class="m role" opacity="0" style="animation:vis3 12s linear 1.2s infinite both">CSE @ North South University<tspan class="blink" style="fill:#4ade80">▍</tspan></text>
+<rect class="cov" x="455" y="176" width="288" height="24" fill="#0a1322" style="transform-origin:743px 0;animation:cov3 12s steps(30) 1.2s infinite both"/>
 </g>
 <g class="fade" style="animation-delay:1.00s"><text x="436" y="226" class="s sum">Computer Science &amp; Engineering student at North South</text></g>
 <g class="fade" style="animation-delay:1.12s"><text x="436" y="246" class="s sum">University, building full-stack web apps with a focus on</text></g>
